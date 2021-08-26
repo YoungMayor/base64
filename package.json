@@ -1,0 +1,53 @@
+{
+    "name": "@youngmayor/package-tmpl",
+    "version": "1.0.0",
+    "description": "A template for packages",
+    "main": "./src/index.js",
+    "jsdelivr": "dist/template.min.js",
+    "unpkg": "dist/template.min.js",
+    "scripts": {
+        "pretest": "browserify ./src/index.js --standalone Template | uglifyjs -cm > example/index.js",
+        "test": "echo \"Error: no test specified\"",
+        "prebuild": "rimraf dist",
+        "build": "npm-run-all --parallel build:*",
+        "build:umd": "webpack --output-filename template.js",
+        "build:min": "webpack --output-filename template.min.js",
+        "predoc": "",
+        "doc": "npm-run-all doc:*",
+        "doc:build": "npm run tempbuild",
+        "doc:doc": "jsdoc --readme ./readme.md -c jsdoc.json",
+        "postdoc": "rimraf dist/tmp/",
+        "preversion": "",
+        "version": "npm-run-all version:*",
+        "version:build": "npm run tempbuild",
+        "version:docs": "jsdoc --readme ./readme.md --package ./package.json -c jsdoc.json",
+        "postversion": "rimraf dist/tmp/ && npm run doc && npm run build",
+        "tempbuild": "rimraf dist/tmp/ && webpack --output-filename tmp/template.min.js"
+    },
+    "keywords": [
+        "node",
+        "package",
+        "npm",
+        "template"
+    ],
+    "author": "Meyoron Aghogho <youngmayor08@gmail.com> (https://youngmayor.dev)",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/YoungMayor/package-tmpl.git"
+    },
+    "license": "ISC",
+    "homepage": "https://youngmayor.github.io/package-tmpl",
+    "dependencies": {},
+    "devDependencies": {
+        "babel-loader": "^8.2.2",
+        "babel-register": "^6.26.0",
+        "browserify": "^17.0.0",
+        "jsdoc": "^3.6.7",
+        "json-loader": "^0.5.7",
+        "npm-run-all": "^4.1.5",
+        "rimraf": "^3.0.2",
+        "uglify-js": "^3.14.1",
+        "webpack": "^5.51.1",
+        "webpack-cli": "^4.8.0"
+    }
+}
