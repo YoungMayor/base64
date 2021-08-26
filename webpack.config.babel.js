@@ -7,7 +7,7 @@ module.exports = {
     output: {
         path: join(__dirname, 'dist'),
         libraryTarget: 'umd',
-        library: 'template',
+        library: 'base64',
     },
     devtool: 'source-map',
     // module: {

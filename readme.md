@@ -1,9 +1,9 @@
-# Package Template
+# Base64 Manager
 
-[![npm version](https://img.shields.io/npm/v/@youngmayor/package-tmpl.svg?style=flat-square)](https://www.npmjs.org/package/@youngmayor/package-tmpl)
-[![install size](https://packagephobia.now.sh/badge?p=@youngmayor/package-tmpl)](https://packagephobia.now.sh/result?p=@youngmayor/package-tmpl)
-[![npm downloads](https://img.shields.io/npm/dm/@youngmayor/package-tmpl.svg?style=flat-square)](http://npm-stat.com/charts.html?package=@youngmayor/package-tmpl)
-<!-- [![CDNJS](https://img.shields.io/cdnjs/v/@youngmayor/package-tmpl.svg?style=flat-square)](https://cdnjs.com/libraries/@youngmayor/package-tmpl) -->
+[![npm version](https://img.shields.io/npm/v/@youngmayor/base64.svg?style=flat-square)](https://www.npmjs.org/package/@youngmayor/base64)
+[![install size](https://packagephobia.now.sh/badge?p=@youngmayor/base64)](https://packagephobia.now.sh/result?p=@youngmayor/base64)
+[![npm downloads](https://img.shields.io/npm/dm/@youngmayor/base64.svg?style=flat-square)](http://npm-stat.com/charts.html?package=@youngmayor/base64)
+<!-- [![CDNJS](https://img.shields.io/cdnjs/v/@youngmayor/base64.svg?style=flat-square)](https://cdnjs.com/libraries/@youngmayor/base64) -->
 <!-- [![build status](https://img.shields.io/travis/axios/axios/master.svg?style=flat-square)](https://travis-ci.org/axios/axios) -->
 <!-- [![code coverage](https://img.shields.io/coveralls/mzabriskie/axios.svg?style=flat-square)](https://coveralls.io/r/mzabriskie/axios) -->
 <!-- [![gitter chat](https://img.shields.io/gitter/room/mzabriskie/axios.svg?style=flat-square)](https://gitter.im/mzabriskie/axios) -->
@@ -16,15 +16,15 @@ A template for creating npm packages
   - [Browser Support](#browser-support)
   - [Installing](#installing)
   - [Usage](#usage) 
-  - [Resources](#resources)
   - [Credits](#credits)
-  - [License](#license)
+
 
 ___
 ## Features
 ___
 
-- List the app features
+- Encode to base64 
+- Decode base64
 
 ___
 ## Browser Support
@@ -42,27 +42,27 @@ ___
 
 - Using npm:
     ```bash
-    $ npm install @youngmayor/package-tmpl
+    $ npm install @youngmayor/base64
     ```
 
 - Using bower:
     ```bash
-    $ bower install @youngmayor/package-tmpl
+    $ bower install @youngmayor/base64
     ```
 
 - Using yarn:
     ```bash
-    $ yarn add @youngmayor/package-tmpl
+    $ yarn add @youngmayor/base64
     ```
 
 - Using jsDelivr CDN:
     ```html
-    <script src="https://cdn.jsdelivr.net/npm/@youngmayor/package-tmpl@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@youngmayor/base64@latest"></script>
     ```
 
 - Using unpkg CDN:
     ```html
-    <script src="https://unpkg.com/@youngmayor/package-tmpl"></script>
+    <script src="https://unpkg.com/@youngmayor/base64"></script>
     ```
 
 ___
@@ -70,20 +70,20 @@ ___
 ___
 - In a node based application, you can import the package using commonJS as shown below
     ```js
-    const template = require('@youngmayor/package-tmpl');
+    const template = require('@youngmayor/base64');
 
     // or 
 
-    import template from '@youngmayor/package-tmpl';
+    import template from '@youngmayor/base64';
     ```
 
 - It can also be linked to using any of the below CDNs
     ```html
-    <script src="https://cdn.jsdelivr.net/npm/@youngmayor/package-tmpl@latest" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/@youngmayor/base64@latest" async></script>
 
     <!-- or -->
 
-    <script src="https://unpkg.com/@youngmayor/package-tmpl" async></script>
+    <script src="https://unpkg.com/@youngmayor/base64" async></script>
 
 
     <!-- the package can now be accessed via window.Template -->

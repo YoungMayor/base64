@@ -1,4 +1,4 @@
-class Template {
+class Base64 {
     /**
      * The class constructor
      * @constructor
@@ -19,4 +19,4 @@ class Template {
     }
 }
 
-module.exports = Template
+module.exports = Base64

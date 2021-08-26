@@ -1,17 +1,17 @@
 {
-    "name": "@youngmayor/package-tmpl",
+    "name": "@youngmayor/base64",
     "version": "1.0.0",
-    "description": "A template for packages",
+    "description": "A base64 management utility",
     "main": "./src/index.js",
-    "jsdelivr": "dist/template.min.js",
-    "unpkg": "dist/template.min.js",
+    "jsdelivr": "dist/base64.min.js",
+    "unpkg": "dist/base64.min.js",
     "scripts": {
-        "pretest": "browserify ./src/index.js --standalone Template | uglifyjs -cm > example/index.js",
+        "pretest": "browserify ./src/index.js --standalone base64 | uglifyjs -cm > example/index.js",
         "test": "echo \"Error: no test specified\"",
         "prebuild": "rimraf dist",
         "build": "npm-run-all --parallel build:*",
-        "build:umd": "webpack --output-filename template.js",
-        "build:min": "webpack --output-filename template.min.js",
+        "build:umd": "webpack --output-filename base64.js",
+        "build:min": "webpack --output-filename base64.min.js",
         "predoc": "",
         "doc": "npm-run-all doc:*",
         "doc:build": "npm run tempbuild",
@@ -22,13 +22,13 @@
         "version:build": "npm run tempbuild",
         "version:docs": "jsdoc --readme ./readme.md --package ./package.json -c jsdoc.json",
         "postversion": "rimraf dist/tmp/ && npm run doc && npm run build",
-        "tempbuild": "rimraf dist/tmp/ && webpack --output-filename tmp/template.min.js"
+        "tempbuild": "rimraf dist/tmp/ && webpack --output-filename tmp/base64.min.js"
     },
     "keywords": [
         "node",
         "package",
         "npm",
-        "template"
+        "base64"
     ],
     "author": "Meyoron Aghogho <youngmayor08@gmail.com> (https://youngmayor.dev)",
     "repository": {
