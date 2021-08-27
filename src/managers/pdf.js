@@ -3,6 +3,7 @@ const Manager = require("../manager");
 /**
  * @class
  * @extends Manager
+ * @inheritdoc
  */
 class PDFManager extends Manager {
     /**
@@ -10,7 +11,7 @@ class PDFManager extends Manager {
      * 
      * @param {string} base64 The base64 encoding of the image
      * 
-     * @returns Manager
+     * @returns {Manager}
      */
     constructor(base64) {
         super(base64, 'application/pdf')

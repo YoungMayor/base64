@@ -18,8 +18,7 @@ class Base64 {
      * Encode a string to base64
      * @param {string} string The string to encode
      * 
-     * 
-     * @returns String
+     * @returns {string}
      * @static
      */
     static encodeString(string) {
@@ -31,7 +30,7 @@ class Base64 {
      * @param {string} encoded The base64 encoding of the PDF
      * 
      * 
-     * @returns PDFManager()
+     * @returns {PDFManager}
      * @static
      */
     static managePDF(encoded) {
@@ -40,12 +39,12 @@ class Base64 {
 
     /**
      * Treat the encoding as a simple string
-     * @param {string} encoded The base64 encoding of the PDF
+     * @param {string} encoded The base64 encoding of the string
      * @param {string} type The type of string
      * Allowed types are [ calendar, css, csv, html, javascript, plain, xml ]
      * 
      * 
-     * @returns StringManager
+     * @returns {StringManager}
      * @static
      */
     static manageString(encoded, type = 'plain') {
@@ -59,7 +58,7 @@ class Base64 {
      * Allowed types are [ bmp, gif, vnd.microsofticon, jpeg, png, svg+xml, tiff, webp ]
      * 
      * 
-     * @returns ImageManager
+     * @returns {ImageManager}
      * @static
      */
     static manageImage(encoded, type = 'png') {

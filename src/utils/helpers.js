@@ -30,9 +30,19 @@ function download(url, fileName) {
     return;
 }
 
+function open(url) {
+    var link = document.createElement('a')
+    link.href = url
+    link.target = '_blank'
+    link.click()
+
+    return;
+}
+
 
 module.exports = {
     toBlob,
     toObjectURL,
-    download
+    download,
+    open
 }
