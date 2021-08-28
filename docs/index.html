@@ -151,14 +151,88 @@ import bas64 from '@youngmayor/base64';
 <hr>
 <h2>Usage</h2>
 <hr>
-<p>Describe how to use the application</p>
-<!-- ## Resources
+<h3>Encoding to base64</h3>
+<ul>
+<li>
+<h3>String</h3>
+<p><code>base64</code> has a very simple API for encoding a string to base64 using the <code>encodeString()</code> method.</p>
+<p>Example</p>
+<pre class="prettyprint source lang-javascript"><code>const encoded_text = base64.encodeString('Hello World')
+console.log(encoded_text);
 
-* [Changelog](https://github.com/axios/axios/blob/master/CHANGELOG.md)
-* [Upgrade Guide](https://github.com/axios/axios/blob/master/UPGRADE_GUIDE.md)
-* [Ecosystem](https://github.com/axios/axios/blob/master/ECOSYSTEM.md)
-* [Contributing Guide](https://github.com/axios/axios/blob/master/CONTRIBUTING.md)
-* [Code of Conduct](https://github.com/axios/axios/blob/master/CODE_OF_CONDUCT.md) -->
+// Result: SGVsbG8gV29ybGQ=
+</code></pre>
+</li>
+</ul>
+<h3>Managers</h3>
+<p>What are Managers?</p>
+<hr>
+<p>Managers are Classes that expose you to a Unified API for handling the base64 object in it's right decode type...</p>
+<p><code>base64</code> is inbuilted with the following managers:</p>
+<ul>
+<li>Image</li>
+<li>PDF</li>
+<li>String</li>
+</ul>
+<p>Invoking Managers</p>
+<hr>
+<p>Invoking a Manager is easy. Call the Manager name on the base64 object with the base64 encoded data</p>
+<p>Example</p>
+<pre class="prettyprint source lang-javascript"><code>const stringmanager = base64.managePDF(encoded_text);
+</code></pre>
+<blockquote>
+<p>Some managers require a second parameter: the type of the data. See the documentation the respective manager.</p>
+</blockquote>
+<p>This creates a manager object for that file type. All managers extend the Base Manager class which exposes the below methods</p>
+<ul>
+<li>
+<p><code>toBlob(): Blob</code>: Convert the Base64 object to a BLOB (Binary large object)</p>
+<pre class="prettyprint source lang-js"><code>...
+blobData = stringmanager.toBlob();
+console.log(blobData);
+
+// Result: Blob Object
+</code></pre>
+</li>
+<li>
+<p><code>toObjectURL(): string</code>: Convert the Base64 object to a URL.createObjectURL</p>
+<pre class="prettyprint source lang-js"><code>// ...
+url = stringmanager.toObjectURL();
+console.log(url)
+
+// Result: blob:null/8d20cde9-db64-49b2-8872-98ada802e85b
+</code></pre>
+</li>
+<li>
+<p><code>toDataURL(): string</code>: Convert the encoded file to a DataURL</p>
+<pre class="prettyprint source lang-js"><code>// ...
+
+dataURL = stringmanager.toDataURL();
+console.log(dataURL)
+
+// Result: data:text/plain;base64,SGVsbG8gV29ybGQ=
+</code></pre>
+</li>
+<li>
+<p><code>download(filename): void</code>: Download the encoded file</p>
+<p>PARAMETERS</p>
+<hr>
+<ul>
+<li>filename: The name to save the downloaded file with</li>
+</ul>
+<pre class="prettyprint source lang-js"><code>// ...
+stringmanager.download('example-download.txt');
+// ...
+</code></pre>
+</li>
+<li>
+<p><code>open(): void</code>: Open the decoded data on a new tab</p>
+<pre class="prettyprint source lang-js"><code>// ...
+stringmanager.open();
+// ...
+</code></pre>
+</li>
+</ul>
 <h2>Credits</h2>
 <p><a href="https://youngmayor.dev">Meyoron Aghogho (YoungMayor)</a>.</p></article>
     </section>

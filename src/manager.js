@@ -42,9 +42,17 @@ class Manager {
     }
 
     /**
+     * Convert the encode to a DataURL string
+     * @returns {void}
+     */
+    toDataURL() {
+        return `data:${this.type};base64,${this.base64}`
+    }
+
+    /**
      * Download the decoded format of the given encode
      * @param {string} filename The name to save the file as. Defaults  to ```sample_download```
-     * @returns {null}
+     * @returns {void}
      */
     download(filename) {
         const url = this.toObjectURL()
@@ -54,12 +62,12 @@ class Manager {
 
     /**
      * Open the decoded format of the given encode in a new tab
-     * @returns {null}
+     * @returns {void}
      */
-    open(filename) {
+    open() {
         const url = this.toObjectURL()
 
-        return open(url, filename)
+        return open(url)
     }
 }
 

@@ -17,6 +17,17 @@ function toObjectURL(blob) {
     return window.URL.createObjectURL(blob)
 }
 
+function toDataURL(blob, callback) {
+
+    var reader = new FileReader();
+
+    reader.addEventListener("load", function() {
+        callback(reader.result);
+    }, false);
+
+    reader.readAsDataURL(blob);
+}
+
 function download(url, fileName) {
     if (!fileName) {
         fileName = `sample_download`
@@ -43,6 +54,7 @@ function open(url) {
 module.exports = {
     toBlob,
     toObjectURL,
+    toDataURL,
     download,
     open
 }

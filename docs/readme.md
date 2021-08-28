@@ -88,15 +88,92 @@ ___
 ## Usage
 ___
 
-Describe how to use the application
+### Encoding to base64
+- ### String
 
-<!-- ## Resources
+    ```base64``` has a very simple API for encoding a string to base64 using the ```encodeString()``` method.
+    
+    Example
+    ```javascript
+    const encoded_text = base64.encodeString('Hello World')
+    console.log(encoded_text);
 
-* [Changelog](https://github.com/axios/axios/blob/master/CHANGELOG.md)
-* [Upgrade Guide](https://github.com/axios/axios/blob/master/UPGRADE_GUIDE.md)
-* [Ecosystem](https://github.com/axios/axios/blob/master/ECOSYSTEM.md)
-* [Contributing Guide](https://github.com/axios/axios/blob/master/CONTRIBUTING.md)
-* [Code of Conduct](https://github.com/axios/axios/blob/master/CODE_OF_CONDUCT.md) -->
+    // Result: SGVsbG8gV29ybGQ=
+    ```
+
+### Managers
+
+What are Managers? 
+___
+Managers are Classes that expose you to a Unified API for handling the base64 object in it's right decode type...
+
+
+```base64``` is inbuilted with the following managers:
+- Image
+- PDF
+- String
+
+Invoking Managers
+___
+Invoking a Manager is easy. Call the Manager name on the base64 object with the base64 encoded data
+
+Example 
+```javascript
+const stringmanager = base64.managePDF(encoded_text);
+```
+>Some managers require a second parameter: the type of the data. See the documentation the respective manager.
+
+This creates a manager object for that file type. All managers extend the Base Manager class which exposes the below methods
+ - ```toBlob(): Blob```: Convert the Base64 object to a BLOB (Binary large object)
+
+    ```js
+    ...
+    blobData = stringmanager.toBlob();
+    console.log(blobData);
+    
+    // Result: Blob Object
+    ```
+
+ - ```toObjectURL(): string```: Convert the Base64 object to a URL.createObjectURL
+
+    ```js
+    // ...
+    url = stringmanager.toObjectURL();
+    console.log(url)
+
+    // Result: blob:null/8d20cde9-db64-49b2-8872-98ada802e85b
+    ```
+
+ - ```toDataURL(): string```: Convert the encoded file to a DataURL
+
+    ```js
+    // ...
+
+    dataURL = stringmanager.toDataURL();
+    console.log(dataURL)
+
+    // Result: data:text/plain;base64,SGVsbG8gV29ybGQ=
+    ```
+
+ - ```download(filename): void```: Download the encoded file
+
+    PARAMETERS
+    
+    ___
+    - filename: The name to save the downloaded file with
+    ```js
+    // ...
+    stringmanager.download('example-download.txt');
+    // ...
+    ```
+
+ - ```open(): void```: Open the decoded data on a new tab
+
+    ```js
+    // ...
+    stringmanager.open();
+    // ...
+    ```
 
 ## Credits
 [Meyoron Aghogho (YoungMayor)](https://youngmayor.dev).
