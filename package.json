@@ -33,10 +33,10 @@
     "author": "Meyoron Aghogho <youngmayor08@gmail.com> (https://youngmayor.dev)",
     "repository": {
         "type": "git",
-        "url": "https://github.com/YoungMayor/package-tmpl.git"
+        "url": "https://github.com/YoungMayor/base64.git"
     },
     "license": "ISC",
-    "homepage": "https://youngmayor.github.io/package-tmpl",
+    "homepage": "https://youngmayor.github.io/base64",
     "dependencies": {},
     "devDependencies": {
         "babel-loader": "^8.2.2",
