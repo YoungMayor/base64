@@ -109,9 +109,9 @@ Managers are Classes that expose you to a Unified API for handling the base64 ob
 
 
 ```base64``` is inbuilted with the following managers:
-- Image
-- PDF
-- String
+- [Image Manager](#image-manager)
+- [PDF Manager](#pdf-manager)
+- [String Manager](#string-manager)
 
 Invoking Managers
 ___
@@ -174,6 +174,49 @@ This creates a manager object for that file type. All managers extend the Base M
     stringmanager.open();
     // ...
     ```
+    
+
+Available Managers
+___
+The following Managers currently exist 
+## Image Manager
+- Instantiation
+
+    ```js
+    const base64 = require('@youngmayor/base64');
+    
+    const imagemanager = base64.manageImage(encoding, image_type)
+    // image_type must be one of [ bmp, gif, vnd.microsofticon, jpeg, png, svg+xml, tiff, webp ]
+    ```
+
+## PDF Manager
+- Instantiation
+
+    ```js
+    const base64 = require('@youngmayor/base64');
+
+    const pdfmanager = base64.managePDF(encoding)
+    ```
+
+## String Manager
+- Instantiation
+
+    ```js
+    const base64 = require('@youngmayor/base64');
+
+    const stringmanager = base64.manageString(encoding, string_type)
+    // string_type must be one of [ calendar, css, csv, html, javascript, plain, xml ]
+    ```
+- Methods
+  - ```decodeString()```: Decode the string
+
+    ```js
+        let decoded = stringmanager.decodeString(); 
+        console.log(decoded)
+
+        // Result: Hello World
+    ```
+
 
 ## Credits
 [Meyoron Aghogho (YoungMayor)](https://youngmayor.dev).

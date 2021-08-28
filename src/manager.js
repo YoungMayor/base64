@@ -1,13 +1,17 @@
 const { download, toBlob, toObjectURL, open } = require("./utils/helpers");
 
 /**
- * @class 
+ * @class
  * @classdesc The super Manager class for managing the base64 encoding and transforming it
  */
 class Manager {
-    base64 = null;
     /**
-     * @private
+     * @protected
+     */
+    base64 = null;
+
+    /**
+     * @protected
      */
     type = null;
 
@@ -15,7 +19,7 @@ class Manager {
      * @constructor
      * @param {string} base64 The base64 encoding
      * @param {string} type The type of document
-     * 
+     *
      * @returns {null}
      */
     constructor(base64, type) {

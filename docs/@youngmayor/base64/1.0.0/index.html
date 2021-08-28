@@ -170,9 +170,9 @@ console.log(encoded_text);
 <p>Managers are Classes that expose you to a Unified API for handling the base64 object in it's right decode type...</p>
 <p><code>base64</code> is inbuilted with the following managers:</p>
 <ul>
-<li>Image</li>
-<li>PDF</li>
-<li>String</li>
+<li><a href="#image-manager">Image Manager</a></li>
+<li><a href="#pdf-manager">PDF Manager</a></li>
+<li><a href="#string-manager">String Manager</a></li>
 </ul>
 <p>Invoking Managers</p>
 <hr>
@@ -231,6 +231,54 @@ stringmanager.download('example-download.txt');
 stringmanager.open();
 // ...
 </code></pre>
+</li>
+</ul>
+<p>Available Managers</p>
+<hr>
+<p>The following Managers currently exist</p>
+<h2>Image Manager</h2>
+<ul>
+<li>
+<p>Instantiation</p>
+<pre class="prettyprint source lang-js"><code>const base64 = require('@youngmayor/base64');
+
+const imagemanager = base64.manageImage(encoding, image_type)
+// image_type must be one of [ bmp, gif, vnd.microsofticon, jpeg, png, svg+xml, tiff, webp ]
+</code></pre>
+</li>
+</ul>
+<h2>PDF Manager</h2>
+<ul>
+<li>
+<p>Instantiation</p>
+<pre class="prettyprint source lang-js"><code>const base64 = require('@youngmayor/base64');
+
+const pdfmanager = base64.managePDF(encoding)
+</code></pre>
+</li>
+</ul>
+<h2>String Manager</h2>
+<ul>
+<li>
+<p>Instantiation</p>
+<pre class="prettyprint source lang-js"><code>const base64 = require('@youngmayor/base64');
+
+const stringmanager = base64.manageString(encoding, string_type)
+// string_type must be one of [ calendar, css, csv, html, javascript, plain, xml ]
+</code></pre>
+</li>
+<li>
+<p>Methods</p>
+<ul>
+<li>
+<p><code>decodeString()</code>: Decode the string</p>
+<pre class="prettyprint source lang-js"><code>    let decoded = stringmanager.decodeString(); 
+    console.log(decoded)
+
+    // Result: Hello World
+</code></pre>
+</li>
+</ul>
 </li>
 </ul>
 <h2>Credits</h2>
