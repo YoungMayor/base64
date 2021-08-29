@@ -1,6 +1,6 @@
 {
     "name": "@youngmayor/base64",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "A base64 management utility",
     "main": "./src/index.js",
     "jsdelivr": "dist/base64.min.js",
